@@ -2,9 +2,17 @@ package com.example.eclectics_kyc_app_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.example.eclectics_kyc_app_api")
 public class EclecticsKycAppApiApplication {
+	@Bean
+	public RestTemplate restTemplate(){
+		return new RestTemplate();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(EclecticsKycAppApiApplication.class, args);
